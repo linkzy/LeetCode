@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { fetchListData } from '../utils/api';
 
-const ListComponent = ({ problems }) => {
+const ListComponent = ({ categoryId }) => {
+  const [listData, setListData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchListData(categoryId);
+      setListData(data);
+    };
+
+    fetchData();
+  }, [categoryId]);
+
   return (
     <div>
-      <h2>LeetCode Problems</h2>
+      <h2>List</h2>
       <ul>
-        {problems.map((problem) => (
-          <li key={problem.id}>{problem.title}</li>
+        {listData.map((item) => (
+          <li key={item.id}>{item.title.rendered}</li>
         ))}
       </ul>
     </div>
