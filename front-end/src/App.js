@@ -6,7 +6,6 @@ const App = () => {
     <div>
       <h1>My React LeetCode Showcase</h1>
       <ListComponent categoryId={22} />
-      <ListComponent categoryId={13} />
     </div>
   );
 };
