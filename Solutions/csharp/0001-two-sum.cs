@@ -1,12 +1,7 @@
-﻿//https://leetcode.com/problems/two-sum/submissions/1100465816
+﻿//Explanation: https://linkzy.dev/1-two-sum-problem-and-solutions/
+//Submission: https://leetcode.com/problems/two-sum/submissions/1100465816
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode
+namespace csharp
 {
     public class TwoSum
     {
@@ -15,14 +10,24 @@ namespace Leetcode
 
         public TwoSum()
         {
-            // Fill nums array with a million random numbers
             Random rand = new Random();
             nums = Enumerable.Repeat(0, 2000).Select(i => rand.Next(-1000000000, 1000000000)).ToArray();
             target = nums[nums.Length - 2] + nums[nums.Length - 1];
         }
 
         [Fact]
-        public int[] TwoSumHashTable()
+        public void Can_Solve_With_Hashtable()
+        {
+            Object.Equals(TwoSumHashTable(), target);
+        }
+
+        [Fact]
+        public void Can_Solve_With_Nested_Loops()
+        {
+            Object.Equals(TwoSumLoop(), target);
+        }
+        
+        private int[] TwoSumHashTable()
         {
             Dictionary<int, int> table = new Dictionary<int, int>();
             for (int i = 0; i < nums.Length; i++)
@@ -36,9 +41,8 @@ namespace Leetcode
             }
             return null;
         }
-
-        [Fact]
-        public int[] TwoSumLoop()
+        
+        private int[] TwoSumLoop()
         {
             int n = nums.Length;
 
