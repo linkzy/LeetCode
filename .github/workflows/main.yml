@@ -42,5 +42,5 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t your-docker-username/react-app:latest front-end
-          docker push your-docker-username/react-app:latest
+          docker build -t linkzy/react-app:latest front-end
+          docker push linkzy/react-app:latest
