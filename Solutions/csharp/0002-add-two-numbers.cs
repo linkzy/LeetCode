@@ -3,7 +3,7 @@
 
 namespace csharp
 {
-    public class AddTwoNumbersSolution
+    public class _0002_Add_Two_Numbers_Solution
     {
 
         [Fact]

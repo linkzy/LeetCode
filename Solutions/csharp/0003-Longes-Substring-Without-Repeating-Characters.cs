@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharp
 {
-    public class LongesSubstringWithoutRepeatingCharacters
+    public class _0003_Longes_Substring_Without_Repeating_Characters
     {
 
         [Fact]

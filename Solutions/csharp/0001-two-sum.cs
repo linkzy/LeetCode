@@ -3,12 +3,12 @@
 
 namespace csharp
 {
-    public class TwoSum
+    public class _0001_Two_Sum
     {
         private readonly int[] nums;
         private readonly int target;
 
-        public TwoSum()
+        public _0001_Two_Sum()
         {
             Random rand = new Random();
             nums = Enumerable.Repeat(0, 2000).Select(i => rand.Next(-1000000000, 1000000000)).ToArray();
